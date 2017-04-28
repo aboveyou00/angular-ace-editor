@@ -1,6 +1,6 @@
 {
-  "name": "ng2-ace-editor",
-  "version": "0.1.9",
+  "name": "angular-ace-editor",
+  "version": "0.2.0",
   "description": "Ace editor integration with typescript for angular 2.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -25,6 +25,9 @@
     "angular2-ace"
   ],
   "author": "François-Xavier Montigny <fxaviermontigny@gmail.com>",
+  "contributors": [
+    "Brandon Slade <brandonyoyoslade@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fxmontigny/ng2-ace-editor/issues"
