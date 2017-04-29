@@ -36,6 +36,7 @@ System.registerDynamic("dist/component", ["@angular/core", "@angular/forms", "br
             this._onTouched = function () {};
             var el = elementRef.nativeElement;
             this._editor = ace["edit"](el);
+            this._editor.$blockScrolling = Infinity;
             this.init();
             this.initEvents();
         }
@@ -444,7 +445,7 @@ System.registerDynamic("dist/index", ["./directive", "./component", "./module"],
   ace.config.set('basePath', 'node_modules/ace-builds/src-min/');
   return module.exports;
 });
-System.registerDynamic("ng2-ace-editor", ["./dist/index"], true, function ($__require, exports, module) {
+System.registerDynamic("angular-ace-editor", ["./dist/index"], true, function ($__require, exports, module) {
   "use strict";
 
   var define,

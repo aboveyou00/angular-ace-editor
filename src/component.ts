@@ -34,6 +34,7 @@ export class AceEditorComponent implements ControlValueAccessor {
     constructor(elementRef: ElementRef) {
         let el = elementRef.nativeElement;
         this._editor = ace["edit"](el);
+        this._editor.$blockScrolling = Infinity;
 
         this.init();
         this.initEvents();
