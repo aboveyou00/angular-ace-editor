@@ -7,10 +7,6 @@
   "scripts": {
     "build": "ngc && node make.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fxmontigny/ng2-ace-editor.git"
-  },
   "keywords": [
     "ng2",
     "angular2",
@@ -29,8 +25,12 @@
     "Brandon Slade <brandonyoyoslade@gmail.com>"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/angular-ace-editor.git"
+  },
   "bugs": {
-    "url": "https://github.com/fxmontigny/ng2-ace-editor/issues"
+    "url": "https://github.com/aboveyou00/angular-ace-editor/issues"
   },
   "dependencies": {
     "ace-builds": "^1.2.5",
