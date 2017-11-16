@@ -15,6 +15,4 @@ import { AceEditorDirective } from './directive';
         AceEditorDirective
     ]
 })
-export class AceEditorModule {
-
-}
+export class AceEditorModule { }
