@@ -15,7 +15,6 @@ typings
 # OS
 .DS_Store
 .idea/
-*.lock
 
 ng2-ace-editor.js
 src

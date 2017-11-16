@@ -4,16 +4,6 @@ System.registerDynamic("dist/component", ["@angular/core", "@angular/forms", "br
     var define,
         global = this || self,
         GLOBAL = global;
-    var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
-        var c = arguments.length,
-            r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-            d;
-        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-        return c > 3 && r && Object.defineProperty(target, key, r), r;
-    };
-    var __metadata = this && this.__metadata || function (k, v) {
-        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-    };
     Object.defineProperty(exports, "__esModule", { value: true });
     var core_1 = $__require("@angular/core");
     var forms_1 = $__require("@angular/forms");
@@ -22,25 +12,12 @@ System.registerDynamic("dist/component", ["@angular/core", "@angular/forms", "br
     $__require("brace/mode/html");
     var AceEditorComponent = /** @class */function () {
         function AceEditorComponent(elementRef) {
-            this.textChanged = new core_1.EventEmitter();
-            this.textChange = new core_1.EventEmitter();
-            this.style = {};
-            this._options = {};
-            this._readOnly = false;
-            this._theme = "monokai";
-            this._mode = "html";
-            this._autoUpdateContent = true;
-            this._durationBeforeCallback = 0;
-            this._text = "";
-            this._onChange = function (_) {};
-            this._onTouched = function () {};
             var el = elementRef.nativeElement;
             this._editor = ace["edit"](el);
             this._editor.$blockScrolling = Infinity;
             this.init();
             this.initEvents();
         }
-        AceEditorComponent_1 = AceEditorComponent;
         AceEditorComponent.prototype.init = function () {
             this.setOptions(this._options || {});
             this.setTheme(this._theme);
@@ -192,31 +169,7 @@ System.registerDynamic("dist/component", ["@angular/core", "@angular/forms", "br
         AceEditorComponent.prototype.getEditor = function () {
             return this._editor;
         };
-        __decorate([core_1.Output(), __metadata("design:type", Object)], AceEditorComponent.prototype, "textChanged", void 0);
-        __decorate([core_1.Output(), __metadata("design:type", Object)], AceEditorComponent.prototype, "textChange", void 0);
-        __decorate([core_1.Input(), __metadata("design:type", Object)], AceEditorComponent.prototype, "style", void 0);
-        __decorate([core_1.Input(), __metadata("design:type", Object), __metadata("design:paramtypes", [Object])], AceEditorComponent.prototype, "options", null);
-        __decorate([core_1.Input(), __metadata("design:type", Object), __metadata("design:paramtypes", [Object])], AceEditorComponent.prototype, "readOnly", null);
-        __decorate([core_1.Input(), __metadata("design:type", Object), __metadata("design:paramtypes", [Object])], AceEditorComponent.prototype, "theme", null);
-        __decorate([core_1.Input(), __metadata("design:type", Object), __metadata("design:paramtypes", [Object])], AceEditorComponent.prototype, "mode", null);
-        __decorate([core_1.Input(), __metadata("design:type", String), __metadata("design:paramtypes", [String])], AceEditorComponent.prototype, "value", null);
-        __decorate([core_1.Input(), __metadata("design:type", String), __metadata("design:paramtypes", [String])], AceEditorComponent.prototype, "text", null);
-        __decorate([core_1.Input(), __metadata("design:type", Object), __metadata("design:paramtypes", [Object])], AceEditorComponent.prototype, "autoUpdateContent", null);
-        __decorate([core_1.Input(), __metadata("design:type", Number), __metadata("design:paramtypes", [Number])], AceEditorComponent.prototype, "durationBeforeCallback", null);
-        AceEditorComponent = AceEditorComponent_1 = __decorate([core_1.Component({
-            selector: 'ace-editor',
-            template: '',
-            styles: [':host { display:block;width:100%; }'],
-            providers: [{
-                provide: forms_1.NG_VALUE_ACCESSOR,
-                useExisting: core_1.forwardRef(function () {
-                    return AceEditorComponent_1;
-                }),
-                multi: true
-            }]
-        }), __metadata("design:paramtypes", [core_1.ElementRef])], AceEditorComponent);
         return AceEditorComponent;
-        var AceEditorComponent_1;
     }();
     exports.AceEditorComponent = AceEditorComponent;
     return module.exports;
@@ -227,16 +180,6 @@ System.registerDynamic("dist/directive", ["@angular/core", "brace", "brace/theme
     var define,
         global = this || self,
         GLOBAL = global;
-    var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
-        var c = arguments.length,
-            r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-            d;
-        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-        return c > 3 && r && Object.defineProperty(target, key, r), r;
-    };
-    var __metadata = this && this.__metadata || function (k, v) {
-        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-    };
     Object.defineProperty(exports, "__esModule", { value: true });
     var core_1 = $__require("@angular/core");
     $__require("brace");
@@ -244,15 +187,6 @@ System.registerDynamic("dist/directive", ["@angular/core", "brace", "brace/theme
     $__require("brace/mode/html");
     var AceEditorDirective = /** @class */function () {
         function AceEditorDirective(elementRef) {
-            this.textChanged = new core_1.EventEmitter();
-            this.textChange = new core_1.EventEmitter();
-            this._options = {};
-            this._readOnly = false;
-            this._theme = "monokai";
-            this._mode = "html";
-            this._autoUpdateContent = true;
-            this._durationBeforeCallback = 0;
-            this._text = "";
             var el = elementRef.nativeElement;
             this.editor = ace["edit"](el);
             this.init();
@@ -383,18 +317,6 @@ System.registerDynamic("dist/directive", ["@angular/core", "brace", "brace/theme
             enumerable: true,
             configurable: true
         });
-        __decorate([core_1.Output(), __metadata("design:type", Object)], AceEditorDirective.prototype, "textChanged", void 0);
-        __decorate([core_1.Output(), __metadata("design:type", Object)], AceEditorDirective.prototype, "textChange", void 0);
-        __decorate([core_1.Input(), __metadata("design:type", Object), __metadata("design:paramtypes", [Object])], AceEditorDirective.prototype, "options", null);
-        __decorate([core_1.Input(), __metadata("design:type", Object), __metadata("design:paramtypes", [Object])], AceEditorDirective.prototype, "readOnly", null);
-        __decorate([core_1.Input(), __metadata("design:type", Object), __metadata("design:paramtypes", [Object])], AceEditorDirective.prototype, "theme", null);
-        __decorate([core_1.Input(), __metadata("design:type", Object), __metadata("design:paramtypes", [Object])], AceEditorDirective.prototype, "mode", null);
-        __decorate([core_1.Input(), __metadata("design:type", Object), __metadata("design:paramtypes", [String])], AceEditorDirective.prototype, "text", null);
-        __decorate([core_1.Input(), __metadata("design:type", Object), __metadata("design:paramtypes", [Object])], AceEditorDirective.prototype, "autoUpdateContent", null);
-        __decorate([core_1.Input(), __metadata("design:type", Number), __metadata("design:paramtypes", [Number])], AceEditorDirective.prototype, "durationBeforeCallback", null);
-        AceEditorDirective = __decorate([core_1.Directive({
-            selector: '[ace-editor]'
-        }), __metadata("design:paramtypes", [core_1.ElementRef])], AceEditorDirective);
         return AceEditorDirective;
     }();
     exports.AceEditorDirective = AceEditorDirective;
@@ -406,25 +328,12 @@ System.registerDynamic("dist/module", ["@angular/core", "./component", "./direct
     var define,
         global = this || self,
         GLOBAL = global;
-    var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
-        var c = arguments.length,
-            r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-            d;
-        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-        return c > 3 && r && Object.defineProperty(target, key, r), r;
-    };
     Object.defineProperty(exports, "__esModule", { value: true });
     var core_1 = $__require("@angular/core");
     var component_1 = $__require("./component");
     var directive_1 = $__require("./directive");
     var AceEditorModule = /** @class */function () {
         function AceEditorModule() {}
-        AceEditorModule = __decorate([core_1.NgModule({
-            declarations: [component_1.AceEditorComponent, directive_1.AceEditorDirective],
-            imports: [],
-            providers: [],
-            exports: [component_1.AceEditorComponent, directive_1.AceEditorDirective]
-        })], AceEditorModule);
         return AceEditorModule;
     }();
     exports.AceEditorModule = AceEditorModule;

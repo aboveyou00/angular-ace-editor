@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc && node make.js"
+    "build": "ngc && node make.js"
   },
   "repository": {
     "type": "git",
@@ -48,6 +48,7 @@
   "devDependencies": {
     "@angular/common": "^5.0.1",
     "@angular/compiler": "^5.0.1",
+    "@angular/compiler-cli": "^5.0.1",
     "@angular/core": "^5.0.1",
     "@angular/forms": "^5.0.1",
     "@angular/platform-browser": "^5.0.1",
