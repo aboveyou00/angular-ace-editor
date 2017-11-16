@@ -15,6 +15,5 @@ typings
 # OS
 .DS_Store
 .idea/
-*.lock
 
 dist
