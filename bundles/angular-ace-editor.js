@@ -10,8 +10,20 @@ System.registerDynamic("dist/component", ["@angular/core", "@angular/forms", "br
     $__require("brace");
     $__require("brace/theme/monokai");
     $__require("brace/mode/html");
-    var AceEditorComponent = /** @class */function () {
+    var AceEditorComponent = function () {
         function AceEditorComponent(elementRef) {
+            this.textChanged = new core_1.EventEmitter();
+            this.textChange = new core_1.EventEmitter();
+            this.style = {};
+            this._options = {};
+            this._readOnly = false;
+            this._theme = "monokai";
+            this._mode = "html";
+            this._autoUpdateContent = true;
+            this._durationBeforeCallback = 0;
+            this._text = "";
+            this._onChange = function (_) {};
+            this._onTouched = function () {};
             var el = elementRef.nativeElement;
             this._editor = ace["edit"](el);
             this._editor.$blockScrolling = Infinity;
@@ -169,6 +181,35 @@ System.registerDynamic("dist/component", ["@angular/core", "@angular/forms", "br
         AceEditorComponent.prototype.getEditor = function () {
             return this._editor;
         };
+        AceEditorComponent.decorators = [{ type: core_1.Component, args: [{
+                selector: 'ace-editor',
+                template: '',
+                styles: [':host { display:block;width:100%; }'],
+                providers: [{
+                    provide: forms_1.NG_VALUE_ACCESSOR,
+                    useExisting: core_1.forwardRef(function () {
+                        return AceEditorComponent;
+                    }),
+                    multi: true
+                }]
+            }] }];
+        /** @nocollapse */
+        AceEditorComponent.ctorParameters = function () {
+            return [{ type: core_1.ElementRef }];
+        };
+        AceEditorComponent.propDecorators = {
+            "textChanged": [{ type: core_1.Output }],
+            "textChange": [{ type: core_1.Output }],
+            "style": [{ type: core_1.Input }],
+            "options": [{ type: core_1.Input }],
+            "readOnly": [{ type: core_1.Input }],
+            "theme": [{ type: core_1.Input }],
+            "mode": [{ type: core_1.Input }],
+            "value": [{ type: core_1.Input }],
+            "text": [{ type: core_1.Input }],
+            "autoUpdateContent": [{ type: core_1.Input }],
+            "durationBeforeCallback": [{ type: core_1.Input }]
+        };
         return AceEditorComponent;
     }();
     exports.AceEditorComponent = AceEditorComponent;
@@ -185,8 +226,17 @@ System.registerDynamic("dist/directive", ["@angular/core", "brace", "brace/theme
     $__require("brace");
     $__require("brace/theme/monokai");
     $__require("brace/mode/html");
-    var AceEditorDirective = /** @class */function () {
+    var AceEditorDirective = function () {
         function AceEditorDirective(elementRef) {
+            this.textChanged = new core_1.EventEmitter();
+            this.textChange = new core_1.EventEmitter();
+            this._options = {};
+            this._readOnly = false;
+            this._theme = "monokai";
+            this._mode = "html";
+            this._autoUpdateContent = true;
+            this._durationBeforeCallback = 0;
+            this._text = "";
             var el = elementRef.nativeElement;
             this.editor = ace["edit"](el);
             this.init();
@@ -317,6 +367,24 @@ System.registerDynamic("dist/directive", ["@angular/core", "brace", "brace/theme
             enumerable: true,
             configurable: true
         });
+        AceEditorDirective.decorators = [{ type: core_1.Directive, args: [{
+                selector: '[ace-editor]'
+            }] }];
+        /** @nocollapse */
+        AceEditorDirective.ctorParameters = function () {
+            return [{ type: core_1.ElementRef }];
+        };
+        AceEditorDirective.propDecorators = {
+            "textChanged": [{ type: core_1.Output }],
+            "textChange": [{ type: core_1.Output }],
+            "options": [{ type: core_1.Input }],
+            "readOnly": [{ type: core_1.Input }],
+            "theme": [{ type: core_1.Input }],
+            "mode": [{ type: core_1.Input }],
+            "text": [{ type: core_1.Input }],
+            "autoUpdateContent": [{ type: core_1.Input }],
+            "durationBeforeCallback": [{ type: core_1.Input }]
+        };
         return AceEditorDirective;
     }();
     exports.AceEditorDirective = AceEditorDirective;
@@ -332,8 +400,18 @@ System.registerDynamic("dist/module", ["@angular/core", "./component", "./direct
     var core_1 = $__require("@angular/core");
     var component_1 = $__require("./component");
     var directive_1 = $__require("./directive");
-    var AceEditorModule = /** @class */function () {
+    var AceEditorModule = function () {
         function AceEditorModule() {}
+        AceEditorModule.decorators = [{ type: core_1.NgModule, args: [{
+                declarations: [component_1.AceEditorComponent, directive_1.AceEditorDirective],
+                imports: [],
+                providers: [],
+                exports: [component_1.AceEditorComponent, directive_1.AceEditorDirective]
+            }] }];
+        /** @nocollapse */
+        AceEditorModule.ctorParameters = function () {
+            return [];
+        };
         return AceEditorModule;
     }();
     exports.AceEditorModule = AceEditorModule;
